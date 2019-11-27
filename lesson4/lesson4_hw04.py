@@ -1,58 +1,63 @@
 #1. Отсортировать все атрибуты модуля string по алфавиту, в обратном порядке, вывести полученный список на печать.
 
-# import string
-# a = dir()
-# b = dir()
-# a.sort(reverse=True)
-# b.sort()
-# print(a)
-# print(b)
-
+import string
+list_by_alphabetically = dir()
+list_by_reverse_order = dir()
+list_by_alphabetically.sort()
+list_by_reverse_order.sort(reverse=True)
+print(list_by_alphabetically)
+print(list_by_reverse_order)
 
 #2. Попросить пользователя ввести строку. Сформировать список символов, из которых состоит строка и вывести на печать. 
 #(Если была введена строка "hello" , то на выходе будет результат ['h', 'e', 'l', 'l', 'o'] )
 
-#input_string = input("Введите строку:")
-#random_list = list(input_string)
-#print(random_list)
+input_string = input("Введите строку:")
+input_list = list(input_string)
+print(input_list)
 
 #3. Написать скрипт, который предлагает пользователю ввести строку и добавляет символ «+» между каждой парой символом введенной строки, 
 #выводит на печать полученную строку. (Если была введена строка "hello" , то на выходе будет результат 'h+e+l+l+o’). 
 #Подсказка - воспользуйтесь методом join строк
 
-# input_string = input("Введите строку:")
-# join_value = "+".join(input_string)
-# print(join_value)
+input_string = input("Введите строку:")
+print("+".join(input_string))
 
 #4. Написать скрипт, который предлагает пользователю ввести строку, сортирует ее элементы в прямом, а потом в обратном порядке 
 #и выводит на печать отсортированные строки.
 
-# a = input("Введите строку:")
-# b = list(a)
-# b.sort()
-# print(b)
-# b.sort(reverse=True)
-# print(b)
-
-
+random_string = list(input("Введите строку:"))
+random_string.sort()
+print(random_string)
+random_string.sort(reverse=True)
+print(random_string)
 
 #5. Сформировать список из трех случайных трехзначных чисел, вывести на печать полученный список, отсортированный в прямом и обратном порядке.,
 
-# import random
-# a,b,c = random.randint(100,999)
-# print(a,b,c)
-
+import random
+first_digit = random.randint(100,999)
+second_digit = random.randint(100,999)
+thirt_digit = random.randint(100,999)
+list_of_digits = [first_digit,second_digit,thirt_digit]
+list_of_digits.sort()
+print(list_of_digits)
+list_of_digits.reverse()
+print(list_of_digits)
 
 #6. Сформировать тупл, элементами которого 5 последних атрибутов модуля string, выведите на печать. 
 #Преобразовав полученный тупл в список, добавьте на позицию с индексом 2 строку ‘capwords’ и преобразуйте список обратно в тупл.  
 #Выведите на печать.
 
-# import string
-# t = tuple(dir(string)[-5:]
-# tuple = list(t)
-
+import string
+tuple_of_string = tuple(dir(string))[-5:]
+print(tuple_of_string)
+list_of_string = list(tuple_of_string)
+list_of_string.insert(2,'capwords')
+tuple_for_print = tuple(list_of_string)
+print(tuple_for_print)
 
 #7. Сгенерировать случайную строку из 10 символов с помощью функции random. и константы string.ascii_letters
+
+# import random
 
 #8. Написать скрипт, который просит пользователя ввести следующую информацию: имя и фамилию работника (один input), его должность, зарплату, возраст. 
 #Вывести на печать анкету работника в формате: 
@@ -61,14 +66,12 @@
 #также не забудьте очистить от лишних пробелов. При выводе зарплаты, иметь в виду, что интересующая нас точность - до копеек. 
 #Использовать два варианта форматирования строк, на ваш выбор.
 
-
 #9. Написать скрипт, который генерирует случайные пароли случайной длины, не меньше 10 и не больше 20 элементов,  
 # из символов - букв латинского алфавита в верхнем и нижнем регистре, цифр. 
 
 # import string
 # import random
 # random.sample(аргумент,количество)
-
 
 #10. Написать скрипт, который генерирует список из 30 одинаковых элементов (случайное int число), 
 #затем на базе этого списка формирует новый, заменив каждый третий элемент исходного списка на число 1000. 
@@ -80,9 +83,3 @@
 # my_list[::3] = [1000]*10
 # print(my_list[1:])
 
-
-
-# first,second,*other = "Harry Potter and his friends".split()
-# print(first)
-# print(second)
-# print(other)
