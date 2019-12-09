@@ -44,7 +44,7 @@ print("Second_half:",input_string[string_index:])
 # Ваши специалисты узнали, что это число - 10. расшифруйте послание.
 
 secret_key = "VZoFPzGvXwtbR+guMLszPhfvZotHwDm-emryhEXAaBW+-AbMdmEK+ztGDWyIzSFvjaFrHLzhoRqgsQraUdnSBGykFWNLOxTVKM+ynHqsVrQGEiqdKULoDVZcsZ-BpTWkDVR+jSgrfQZhUAdWCxtwOmTBQo+qWOlYyvGxnNpZFlTSrmaesQOotBLnVw!gOUrhz+F-DctdKWvTGhMUopoSPyFAXdJnY+DGFZQbOVgzaqsGvWjtBrJjBWhAFgryaTtwginpEsWtAuOxbgI-ZVunVAIuklBqTlSGUnevwEMqayHKF+sebTCtWcnhzUelA+iM+ivKleqrjoLsmrtHZOGfnHOWXYJpDwU!"
-print(secret_key[10:-1:11])
+print(secret_key[10::11])
 
 #** 6. Написать скрипт, который просит пользователя ввести строку и 
 # выводит на печать эту строку задом на перед. 

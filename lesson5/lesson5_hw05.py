@@ -19,13 +19,19 @@
 # 'profession': 'auror', 'salary': {'amount': 127.45, 'currency': 'galeon'}}
 
 
-variable_1 = "harry potter; 30; 127.45 galeon; auror"
-#variable_2 = "ross geller; 34; 6500.45 usd; paleontologist"
-var_1 = str(variable_1.split(' '))
-print(var_1)
-var_2 = str(var_1.split(';'))
-print(var_2)
-#var_2 = str(var_1.split(' '))
-#print(var_2[0])
+# В процесе решения... Нужно детальнее разобраться с методом split. Сдесь получается нужно сплитить несколько раз но после создается модифицированный список. 
+# Как я правильно понимаю его нужно привести обратно к строке и потом опять сплитить?
+
+# variable_1 = "harry potter; 30; 127.45 galeon; auror"
+# #variable_2 = "ross geller; 34; 6500.45 usd; paleontologist"
+# var_1 = str(variable_1.split(' '))
+# print(var_1)
+# var_2 = str(var_1.split(';'))
+# print(var_2)
+# #var_2 = str(var_1.split(' '))
+# #print(var_2[0])
+
+# 3) Написать скрипт, который будет создавать новый файл с именем new.txt втекущей директории, записывать в него три строки - первую строку с
+# помощью метода write, а две другие - с помощью метода writelines. Закрытьфайл. Открыть файл в режиме чтения и вывести на печать все его содержимое.
 
 

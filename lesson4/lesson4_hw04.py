@@ -1,19 +1,19 @@
 #1. Отсортировать все атрибуты модуля string по алфавиту, в обратном порядке, вывести полученный список на печать.
 
-import string
-list_by_alphabetically = dir()
-list_by_reverse_order = dir()
-list_by_alphabetically.sort()
-list_by_reverse_order.sort(reverse=True)
-print(list_by_alphabetically)
-print(list_by_reverse_order)
+# import string
+# list_by_alphabetically = dir(string)
+# list_by_reverse_order = dir(string)
+# list_by_alphabetically.sort()
+# list_by_reverse_order.sort(reverse=True)
+# print(list_by_alphabetically)
+# print(list_by_reverse_order)
 
 #2. Попросить пользователя ввести строку. Сформировать список символов, из которых состоит строка и вывести на печать. 
 #(Если была введена строка "hello" , то на выходе будет результат ['h', 'e', 'l', 'l', 'o'] )
 
 input_string = input("Введите строку:")
 input_list = list(input_string)
-print(input_list)
+print(input_list) 
 
 #3. Написать скрипт, который предлагает пользователю ввести строку и добавляет символ «+» между каждой парой символом введенной строки, 
 #выводит на печать полученную строку. (Если была введена строка "hello" , то на выходе будет результат 'h+e+l+l+o’). 
@@ -27,9 +27,9 @@ print("+".join(input_string))
 
 random_string = list(input("Введите строку:"))
 random_string.sort()
-print(random_string)
+print(''.join(random_string))
 random_string.sort(reverse=True)
-print(random_string)
+print(''.join(random_string))
 
 #5. Сформировать список из трех случайных трехзначных чисел, вывести на печать полученный список, отсортированный в прямом и обратном порядке.,
 
@@ -55,10 +55,12 @@ list_of_string.insert(2,'capwords')
 tuple_for_print = tuple(list_of_string)
 print(tuple_for_print)
 
-#7. Сгенерировать случайную строку из 10 символов с помощью функции random. и константы string.ascii_letters
+#7. Сгенерировать случайную строку из 10 символов с помощью функции random. и константы string.ascii_letters    
 
-# import random
-# По данной задачи у меня пока нет решения по причине полного непонимания сущности констант модуля strings.
+import string
+import random
+result = random.sample(string.ascii_letters,10)
+print("".join(result))
 
 #8. Написать скрипт, который просит пользователя ввести следующую информацию: имя и фамилию работника (один input), его должность, зарплату, возраст. 
 #Вывести на печать анкету работника в формате: 
@@ -67,23 +69,47 @@ print(tuple_for_print)
 #также не забудьте очистить от лишних пробелов. При выводе зарплаты, иметь в виду, что интересующая нас точность - до копеек. 
 #Использовать два варианта форматирования строк, на ваш выбор.
 
-#Еще не закончил задачу. Тут нужно использовать метод split как я правильно понимаю.
-
 name_surname = input("Введите ваше имя и фамилия:")
+result = name_surname.title()
 position = input("Ваша должость:")
 salary = float(input("Ваша зарплата:"))
 age = input("Ваш возраст:")
-aplication = ["Имя:",name_surname,"Фамилия:",name_surname,"возраст:",age,"Должность:",position,"Зарплата",salary]
-print(aplication)
+result_split = result.split(' ')
+name = result_split[0]
+surname = result_split[1]
+print(f"Имя:{name},Фамилия:{surname},возраст:{age}.Должность:{position}.Зарплата:{salary}")
 
 #9. Написать скрипт, который генерирует случайные пароли случайной длины, не меньше 10 и не больше 20 элементов,  
 # из символов - букв латинского алфавита в верхнем и нижнем регистре, цифр. 
 
-# Тут тоже самое что из заданием 7. Как я правильно понимаю нужно применить метод  string.hexdigits.
+# Решил задачу тремя способами способами первый самый сложный второй менее сложный,третий самый простой.
 
-# import string
-# import random
-# random.sample(аргумент,количество)
+import string
+import random
+lenghth_password_letters = random.randint(10,15)
+lenghth_password_digits = random.randint(1,5)
+random_letters = random.sample(string.ascii_letters,lenghth_password_letters)
+random_digits = random.sample(string.digits,lenghth_password_digits)
+password_letters = "".join(random_letters)
+password_digits = "".join(random_digits)
+user_pasword = (password_digits+password_letters)
+print(user_pasword)
+
+import string
+import random
+lenghth_password_letters = random.randint(10,15)
+lenghth_password_digits = random.randint(1,5)
+random_letters = random.sample(string.ascii_letters,lenghth_password_letters)
+random_digits = random.sample(string.digits,lenghth_password_digits)
+user_pasword = random_digits
+user_pasword.extend(random_letters)
+print("".join(user_pasword))
+
+import string
+import random
+lenghth_password_letters = random.randint(10,20)
+user_password = random.sample(string.hexdigits,lenghth_password_letters)
+print("".join(user_password))
 
 #10. Написать скрипт, который генерирует список из 30 одинаковых элементов (случайное int число), 
 #затем на базе этого списка формирует новый, заменив каждый третий элемент исходного списка на число 1000. 
