@@ -23,35 +23,14 @@ print(currency)
 #  {'name': {'first_name': 'Harry', 'last_name': 'Potter'}, 'age': 30,
 # 'profession': 'auror', 'salary': {'amount': 127.45, 'currency': 'galeon'}}
 
-variable_1 = "harry potter; 30; 127.45 galeon; auror"
-pars_one, pars_two = variable_1.split(";",1)
-value_first_name, value_last_name = pars_one.split(" ",1)
-first_name, last_name = value_first_name.title(),value_last_name.title()
-value_age, value_other = pars_two.split(";",1)
-one, value_profession = value_other.split(";",1)
-value_amount, value_currency = one.split()
-profession = value_profession.strip()
-age = int(value_age)
-amount = float(value_amount)
-dictionary_one = {"first_name":first_name,"last_name":last_name}
-dictionary_two = {"amount":amount,"currency":value_currency}
-total_dictionary = {"name":dictionary_one,"age":age,"profession":profession,"salary":dictionary_two}
-print(total_dictionary)
-
-variable_1 = "harry potter; 30; 127.45 galeon; auror"
-pars_one, pars_two, pars_three, pars_four = variable_1.split(";",3)
-list1,list2,list3 = pars_two.split(),pars_three.split(),pars_four.split()
-value_amount, value_currency = list2[0],list2[1]
-name, surname = pars_one.split()
-name, surname = name.title(), surname.title()
-age = list1[0]
-value_age = int(age)
-value_amount = float(value_amount)
-value_position = list3[0]
-dictionary_name = {"first_name":name,"last_name":surname}
-dictionary_money = {"amount":value_amount,"currency":value_currency}
-total_dictionary = {"name":dictionary_name,"age":age,"profession":value_position,"salary":dictionary_money}
-print(total_dictionary)
+variable_1 = "harry potter;30;127.45 galeon;auror"
+name, age, amount, profession = variable_1.split(";")
+first_name,second_name = name.split(" ")
+summ, currency = amount.split(" ")
+name = {"first_name":first_name,"second_name":second_name}
+currency_dict = {"amount":float(summ),"currency":currency}
+total_dict = {"name":{"first_name":first_name,"second_name":second_name},"age":int(age),"profession":profession,"salary":currency_dict}
+print(total_dict)
 
 # Задания для выполнения дз телеграм
 
@@ -93,6 +72,14 @@ code_name = (zip(original,list_for_code))
 print(code_name)
 decoded_name = str(zip(list_for_code,original))
 print(decoded_name)
+
+default = str(input("Введите что вы хотите зашифровать:"))
+original = default.lower()
+step = 4
+edit_original = list(original[step:]+original[:step])
+coded_default = list(zip(original,edit_original))
+print(coded_default)
+
 
 # 6. Необходимо распрасить информацию о продукте из файла products.txt в словарь вида. 
 # {«name»: str, «produced»: {«country»: str, «city»: str}, min_price: {currency, amount}, max_price: {currency, amount} }
