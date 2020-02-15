@@ -1,12 +1,12 @@
-#1. Отсортировать все атрибуты модуля string по алфавиту, в обратном порядке, вывести полученный список на печать.
+# 1. Отсортировать все атрибуты модуля string по алфавиту, в обратном порядке, вывести полученный список на печать.
 
-# import string
-# list_by_alphabetically = dir(string)
-# list_by_reverse_order = dir(string)
-# list_by_alphabetically.sort()
-# list_by_reverse_order.sort(reverse=True)
-# print(list_by_alphabetically)
-# print(list_by_reverse_order)
+import string
+list_by_alphabetically = dir(string)
+list_by_reverse_order = dir(string)
+list_by_alphabetically.sort()
+list_by_reverse_order.sort(reverse=True)
+print(list_by_alphabetically)
+print(list_by_reverse_order)
 
 #2. Попросить пользователя ввести строку. Сформировать список символов, из которых состоит строка и вывести на печать. 
 #(Если была введена строка "hello" , то на выходе будет результат ['h', 'e', 'l', 'l', 'o'] )
@@ -74,42 +74,19 @@ result = name_surname.title()
 position = input("Ваша должость:")
 salary = float(input("Ваша зарплата:"))
 age = input("Ваш возраст:")
-result_split = result.split(' ')
-name = result_split[0]
-surname = result_split[1]
+name, surname = result.split(' ')
 print(f"Имя:{name},Фамилия:{surname},возраст:{age}.Должность:{position}.Зарплата:{salary}")
+
 
 #9. Написать скрипт, который генерирует случайные пароли случайной длины, не меньше 10 и не больше 20 элементов,  
 # из символов - букв латинского алфавита в верхнем и нижнем регистре, цифр. 
 
-# Решил задачу тремя способами способами первый самый сложный второй менее сложный,третий самый простой.
-
-import string
-import random
-lenghth_password_letters = random.randint(10,15)
-lenghth_password_digits = random.randint(1,5)
-random_letters = random.sample(string.ascii_letters,lenghth_password_letters)
-random_digits = random.sample(string.digits,lenghth_password_digits)
-password_letters = "".join(random_letters)
-password_digits = "".join(random_digits)
-user_pasword = (password_digits+password_letters)
-print(user_pasword)
-
-import string
-import random
-lenghth_password_letters = random.randint(10,15)
-lenghth_password_digits = random.randint(1,5)
-random_letters = random.sample(string.ascii_letters,lenghth_password_letters)
-random_digits = random.sample(string.digits,lenghth_password_digits)
-user_pasword = random_digits
-user_pasword.extend(random_letters)
-print("".join(user_pasword))
-
 import string
 import random
 lenghth_password_letters = random.randint(10,20)
-user_password = random.sample(string.hexdigits,lenghth_password_letters)
-print("".join(user_password))
+result = random.sample(string.ascii_letters+string.digits,lenghth_password_letters)
+print("".join(result))
+
 
 #10. Написать скрипт, который генерирует список из 30 одинаковых элементов (случайное int число), 
 #затем на базе этого списка формирует новый, заменив каждый третий элемент исходного списка на число 1000. 
